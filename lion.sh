@@ -29,4 +29,6 @@ nikto -h $1/subs.txt > nikto.txt
 #GitHub Recon
 https://github.com/obheda12/GitDorker
 echo "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" > /opt/github-token.txt
+python3 GitDorker.py -q tesla.com -tf /opt/github-token.txt -d all.txt -o /$1/recon/github.txt
+
 
