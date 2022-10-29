@@ -26,5 +26,6 @@ SubDomains
 cat $1/subs.txt | nuclei > nuclei.txt
 #nikto
 nikto -h $1/subs.txt > nikto.txt
-#
+#GitHub Recon
+https://github.com/obheda12/GitDorker
 
