@@ -28,4 +28,5 @@ cat $1/subs.txt | nuclei > nuclei.txt
 nikto -h $1/subs.txt > nikto.txt
 #GitHub Recon
 https://github.com/obheda12/GitDorker
+echo "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" > /opt/github-token.txt
 
